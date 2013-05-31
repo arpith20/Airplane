@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1368073211 source:/home/arpith/United/projects/CG/Airplanes!/elements/background/main.cpp
+	<iostream>
+	<GL/glut.h>
+	"src/SOIL.h"
+	<string.h>
+	<stdio.h>
+
+1215434608 /home/arpith/United/projects/CG/Airplanes!/elements/background/src/SOIL.h
+

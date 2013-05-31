@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1367150582 source:/home/arpith/United/projects/CG/Airplanes!/elements/man/main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<GL/glut.h>
+

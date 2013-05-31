@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1367126597 source:/home/arpith/United/projects/CG/Airplanes!/elements/airplane/main.cpp
+	<GL/glut.h>
+	"src/SOIL.h"
+	<iostream>
+
+1215434608 /home/arpith/United/projects/CG/Airplanes!/elements/airplane/src/SOIL.h
+

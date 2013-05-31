@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1367426774 source:/home/arpith/United/projects/CG/Airplanes!/elements/maze/main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	<iostream>
+

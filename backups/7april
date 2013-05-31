@@ -1,0 +1,191 @@
+#include <iostream>
+#include<GL/glut.h>
+
+#define max 10
+#define no_obs 10
+
+using namespace std;
+
+int static page=0; //0 -> the main game page
+
+class plane
+{
+	float x[max], y[max], i, y_pos;
+	float ymax, ymin;
+public:
+	int button;
+	plane()
+	{
+		x[1]=50, x[2]=150, x[3]=50;
+		y[1]=10, y[2]=10, y[3]=0;
+		y_pos=0;
+		ymax=435, ymin=0;
+		button=0;
+	}
+	void draw_plane()
+	{
+		glColor3f(1,0,0);
+		glBegin(GL_TRIANGLES);
+		glVertex2f(x[1], y[1]+y_pos);
+		glVertex2f(x[2], y[2]+y_pos);
+		glVertex2f(x[3], y[3]+y_pos);
+		glEnd();
+	}
+	void moveplane_up()
+	{
+		if(y_pos<ymax)
+		{
+			y_pos+=.5;
+		}
+	}
+	void moveplane_down()
+	{
+		if(y_pos>ymin)
+		{
+			y_pos-=.3;
+		}
+
+	}
+} plane1;
+
+class obstacles
+{
+	int i;
+	float ymin, ymax;
+public:
+	float x, y;
+	obstacles()
+	{
+		ymin=0, ymax=450;
+		x=800;
+	}
+	void draw_obs(int number)
+	{
+		glColor3f(0,0,0);
+		glBegin(GL_LINES);
+		glPointSize(10.0);
+		srand(number);
+		if(rand()%2)
+		{
+			glVertex2f(x, rand()%215);
+			glVertex2f(x, ymin);
+			x-=.1;
+		}
+		else
+		{
+			glVertex2f(x, (rand()%215)+225);
+			glVertex2f(x, ymax);
+			x-=.1;
+		}
+		glEnd();
+	}
+}obs[max];
+
+void drawobsticles(int num)
+{
+        if(obs[num].x<1.0)
+                obs[num].x=800;
+        obs[num].draw_obs(num);
+}
+
+void make_plane()
+{
+        //obstacles obs[max]={800,900,1000};
+	plane1.draw_plane();
+        drawobsticles(0);
+}
+
+
+
+void motion_plane()
+{
+	if(plane1.button)
+		plane1.moveplane_up();
+	else
+		plane1.moveplane_down();
+}
+
+void mouse(int button, int state, int x, int y)
+{
+	if(button==GLUT_LEFT_BUTTON && state==GLUT_DOWN)
+	{
+		plane1.button=1;
+		glutIdleFunc(motion_plane);
+	}
+	if(button==GLUT_LEFT_BUTTON && state==GLUT_UP)
+	{
+		plane1.button=0;
+		glutIdleFunc(motion_plane);
+	}
+}
+
+
+void keyboard(unsigned char key, int x, int y)
+{
+	switch (key)
+	{
+	case 27: // 27 is the code for the ESC key.
+		exit(0);
+		break;
+	case 'a':
+		plane1.moveplane_up();
+		break;
+	case 'z':
+		plane1.moveplane_down();
+		break;
+	}
+
+}
+
+void error_handler()
+{
+	cout<<"Error has occuerd!";
+
+}
+
+void display()
+{
+	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+	glColor3f(1.0,0.0,0.0);
+	glPointSize(2.0);
+
+	switch(page)
+	{
+	case 0:
+		make_plane();
+		break;
+	default:
+		error_handler();
+	}
+
+	glutPostRedisplay();
+	glFlush();
+	glutSwapBuffers();
+}
+
+void init()
+{
+	glClearColor(1,1,1,1);
+	glColor3f(1.0,1.0,0.0);
+	//glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0,799,0,449);
+}
+
+int main(int argc, char* argv[])
+{
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH);
+	glutInitWindowSize(800,450);
+	glutCreateWindow("Airplanes!");
+	glClearColor(1,1,1,1);
+	init();
+	glutDisplayFunc(display);
+	glutMouseFunc(mouse);
+	glutKeyboardFunc(keyboard);
+	glEnable(GL_DEPTH_TEST);
+	glutMainLoop();
+	return 0;
+
+}
+
+
