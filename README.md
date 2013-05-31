@@ -44,6 +44,6 @@ Players may left click on the screen to initiate a power-up.
 
 Notes
 -----
-Implemented using C++ and OpenGL.
+Implemented using C++ and OpenGL.<br/>
 SOIL libraries have been used to load images.
 
