@@ -1,5 +1,6 @@
 # Computer Graphics Project 
 ============================
+
 Description
 ------------
 
@@ -7,12 +8,15 @@ The goal of this game is to fly as far as possible, with only two controls at yo
 disposal, this is one of those “easy to learn, difficult to master” situations. You’ll first
 select a plane and a scene. Click once to start make your little guy take off from an
 airport, and it’s on!!
+
 As you fly, right click to begin ascending; the plane descends automatically. So it’s
 critical to master this bouncy method of flying.
+
 Missiles of varying sizes are shot at you. So, you’ll spend most of your time avoiding
 these. Keep a close eye at the fuel gauge! You’ll steadily be running out of fuel as you
 try to gain height. Hit a missile, run out of fuel, or fly into the bottom edge of the
 screen, and you’ll crash and burn!
+
 As far as the game interface is concerned, you’ll be greeted with a loading screen
 followed by a splash screen with the name of the developers (that’s Arpith and Anil!).
 You’ll then see a menu with screen with the following items:
@@ -40,6 +44,6 @@ Players may left click on the screen to initiate a power-up.
 
 Notes
 -----
-Implemented using C++ and OpenGL
-SOIL libraries have been used to load images
+Implemented using C++ and OpenGL.
+SOIL libraries have been used to load images.
 
