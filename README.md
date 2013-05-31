@@ -10,8 +10,7 @@ select a plane and a scene. Click once to start make your little guy take off fr
 airport, and it’s on!!
 
 As you fly, right click to begin ascending; the plane descends automatically. So it’s
-critical to master this bouncy method of flying.
-
+critical to master this bouncy method of flying.<br/>
 Missiles of varying sizes are shot at you. So, you’ll spend most of your time avoiding
 these. Keep a close eye at the fuel gauge! You’ll steadily be running out of fuel as you
 try to gain height. Hit a missile, run out of fuel, or fly into the bottom edge of the
@@ -19,13 +18,14 @@ screen, and you’ll crash and burn!
 
 As far as the game interface is concerned, you’ll be greeted with a loading screen
 followed by a splash screen with the name of the developers (that’s Arpith and Anil!).
-You’ll then see a menu with screen with the following items:
-• Play
-• Settings
-• Instructions
-• Credits
-• High Scores
-• Exit
+You’ll then see a menu with screen with the following items:<br/>
+• Play<br/>
+• Settings<br/>
+• Instructions<br/>
+• Credits<br/>
+• High Scores<br/>
+• Exit<br/>
+
 The user can either start the game directly, if he knows how the game works or has
 played it before, by clicking in the box with “Play” option. Otherwise, he can view the
 instruction as to the game works by clicking on the “Instruction” button. If the player
